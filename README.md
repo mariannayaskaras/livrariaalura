@@ -26,13 +26,21 @@ Formatação de Dados: JSON
 
 Configure o banco de dados:
 ° Crie um banco de dados MySQL e importe o arquivo livros.sql (incluído neste repositório) para criar a tabela de livros.
+
 ° Insira os dados dos livros na tabela.
+
 ° Execute o projeto:
+
 ° Compile e execute o código Java.
+
 ° O programa irá iniciar no console, apresentando um menu de opções.
+
 ° Utilize o menu:
+
 ° Escolha a opção desejada para buscar livros.
+
 ° Siga as instruções do console para inserir os critérios de busca.
+
 ° O programa exibirá os resultados da busca.
 
 ## Observações
