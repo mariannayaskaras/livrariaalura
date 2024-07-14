@@ -1,0 +1,76 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+public class CatalogoLivros {
+
+    private static final String API_BASE_URL = "[C:\Users\maria\OneDrive\Área de Trabalho\Alura.java]";
+
+    public static void main(String[] args) {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        while (true) {
+            System.out.println("\nCatálogo de Livros Interativo");
+            System.out.println("1. Buscar livro por título");
+            System.out.println("2. Buscar livro por autor");
+            System.out.println("3. Buscar livro por ISBN");
+            System.out.println("4. Listar livros por gênero");
+            System.out.println("5. Recomendar livro aleatório");
+            System.out.println("0. Sair");
+
+            try {
+                int opcao = Integer.parseInt(reader.readLine());
+
+                switch (opcao) {
+                    case 1:
+                        buscarLivroPorTitulo(reader);
+                        break;
+                    case 0:
+                        System.out.println("Saindo...");
+                        return;
+                    default:
+                        System.out.println("Opção inválida!");
+                }
+            } catch (Exception e) {
+                System.out.println("Erro: " + e.getMessage());
+            }
+        }
+    }
+
+    private static void buscarLivroPorTitulo(BufferedReader reader) throws Exception {
+        System.out.print("Digite o título do livro: ");
+        String titulo = reader.readLine();
+        String apiUrl = API_BASE_URL + "?titulo=" + titulo; 
+
+        String response = fazerRequisicao(apiUrl);
+        JSONArray livros = new JSONArray(response);
+
+        for (int i = 0; i < livros.length(); i++) {
+            JSONObject livro = livros.getJSONObject(i);
+            String title = livro.getString("titulo");
+            String autor = livro.getString("autor");
+
+            System.out.println("Título: " + title);
+            System.out.println("Autor: " + autor);
+        }
+    }
+
+    private static String fazerRequisicao(String apiUrl) throws Exception {
+        URL url = new URL(apiUrl);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuilder content = new StringBuilder();
+        while ((inputLine = in.readLine()) != null) {
+            content.append(inputLine);
+        }
+        in.close();
+
+        return content.toString();
+    }
+}
