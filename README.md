@@ -25,6 +25,7 @@ Formatação de Dados: JSON
 ## Como usar
 
 Configure o banco de dados:
+
 ° Crie um banco de dados MySQL e importe o arquivo livros.sql (incluído neste repositório) para criar a tabela de livros.
 
 ° Insira os dados dos livros na tabela.
