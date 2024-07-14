@@ -1,13 +1,19 @@
 # Challenge LiterAlura - Catálogo de Livros
 
 ## Descrição
-Este projeto é uma solução para o challenge LiterAlura, um catálogo de livros interativo que permite buscar informações sobre livros de diferentes formas. Atualmente, o catálogo contém 3 livros:
+
+Este projeto é uma solução para o challenge LiterAlura, um catálogo de livros interativo que permite buscar informações sobre livros de diferentes formas. 
+
+Atualmente, o catálogo contém 3 livros:
 
 ° Dom Casmurro de Machado de Assis
+
 ° O Pequeno Príncipe de Antoine de Saint-Exupéry
+
 ° 1984 de George Orwell
 
 ## Funcionalidades
+
 O catálogo permite buscar livros pelas seguintes informações:
 
 ° Título
@@ -19,7 +25,9 @@ O catálogo permite buscar livros pelas seguintes informações:
 ## Tecnologias Utilizadas
 
 Linguagem: Java
+
 Banco de Dados: MySQL
+
 Formatação de Dados: JSON
 
 ## Como usar
@@ -50,14 +58,21 @@ Este é um projeto básico, criado como parte do challenge LiterAlura.
 O código pode ser expandido para incluir mais funcionalidades, como:
 
 ° Cadastro de novos livros
+
 ° Edição de informações de livros
+
 ° Remoção de livros
+
 ° Interface gráfica (GUI)
 
 O tratamento de erros pode ser aprimorado para lidar com situações como:
+
 ° Livro não encontrado
+
 ° Erro de conexão com o banco de dados
+
 ° Entrada inválida do usuário
+
 ° Contribuição
 
 Sinta-se à vontade para contribuir com este projeto, seja corrigindo erros, adicionando novas funcionalidades ou melhorando a documentação. ❤️
